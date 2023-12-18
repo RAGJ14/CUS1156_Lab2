@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 
 public class UniqueWords
+import java.util.ArrayList;
+
+public class UniqueWords
 {
    /**
 		counts the number of unique strings in a list
@@ -12,10 +15,21 @@ public class UniqueWords
 	  int count = 0;
 	  
       for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
+      {		 
+    	  String word1 = list.get(i);
+    	  boolean uniqueWord = true;
+    	  for (int j = 0; j < i; j++)
 		 {
-			
+			if(word1.equals(list.get(j)))
+			{
+				uniqueWord = false;
+			}
 		 }
+    	  
+    	  if (uniqueWord == true)
+    	  {
+    		  count++;
+    	  }
       }
 	  return count;
    }
